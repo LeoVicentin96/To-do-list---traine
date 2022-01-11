@@ -83,7 +83,6 @@ console.log(nome1 != nome2)
 console.log('4 === 4',4 == 4)
 console.log('4 === 4' , '4' === 4)
 
-// operadores logicos
 
 
 
