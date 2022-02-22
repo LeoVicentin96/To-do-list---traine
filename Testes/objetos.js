@@ -1,4 +1,4 @@
-let usuario = {
+var usuario = {
     nome: 'Leo',
     idade: 26,
     cidade: 'Mogi',
@@ -92,3 +92,56 @@ var usuario5 = {
 }
 
 console.log(usuario5)
+
+//getters e setters
+
+// getters e setters
+    // 
+    var usuarios = [
+        {
+            nome: 'Ayrton',
+            idade: 26
+        },
+        {
+            nome: 'João',
+            idade: 19
+        },
+        {
+            nome: 'Maria',
+            idade: 21
+        }
+    ];
+
+    console.log(usuarios[2].idade);
+
+    var usuario = {
+        posicao: 0,
+        get atual() {
+            return usuarios[this.posicao]
+        },
+        set atual(posicao) {
+            this.posicao = posicao;  //this refere-se ao proximo objeto usuario
+        },        proximo() {
+            ++this.posicao;
+        },
+        anterior() {
+            --this.posicao;
+        }
+    };
+
+    console.log(usuario.atual); // { nome: 'Ayrton', idade: 26 }
+    usuario.proximo();
+
+    console.log(usuario.atual); // { nome: 'João', idade: 19 }
+
+    usuario.proximo();
+    console.log(usuario.atual); // // { nome: 'Maria', idade: 21 }
+
+    usuario.anterior(); 
+    console.log(usuario.atual); // { nome: 'João', idade: 19 }
+
+    usuario.atual = 0;
+    console.log(usuario.atual); // { nome: 'Ayrton', idade: 26 }
+
+    usuario.atual = 2;
+    console.log(usuario.atual); // { nome: 'Maria', idade: 21 }
